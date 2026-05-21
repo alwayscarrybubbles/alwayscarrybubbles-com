@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  margin: 0;
-  background: #000;
+    margin: 0;
+    background: #000;
   color: white;
   overflow-x: hidden;
   font-family: "Avenir Next", "Montserrat", Arial, sans-serif;
@@ -182,6 +182,37 @@ h1 sup {
   padding: 4rem 2rem;
   opacity: 0.5;
   font-size: 0.9rem;
+
+}
+  .contact-section {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border: 1px solid white;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: white;
+  color: black;
 }
 </style>
 </head>
@@ -335,9 +366,17 @@ h1 sup {
   </p>
 </section>
 
-<div class="footer">
+<section class="contact-section">
+  <p>
+    Sometimes moments become conversations.
+  </p>
+
+  <a href="mailto:hello@alwayscarrybubbles.com" class="contact-button">
+    Contact Us
+  </a>
+</section>
+  <div class="footer">
   © Always Carry Bubbles™
 </div>
-
 </body>
 </html>
