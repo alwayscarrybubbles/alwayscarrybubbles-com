@@ -120,11 +120,19 @@ h1 sup {
 }
   }
 
-..tagline {
-  font-size: 1.15rem;
-  line-height: 1.35;
-  margin-top: 0.35rem;
-  letter-spacing: 0.04em;
+.intro-title {
+  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.2rem;
+  line-height: 1;
+}
+
+.tagline {
+  font-size: clamp(1.25rem, 4.6vw, 2.2rem);
+  letter-spacing: 0.08em;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  white-space: nowrap;
 }
 
 .intro {
@@ -191,7 +199,7 @@ h1 sup {
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Always Carry Bubbles<sup>™</sup></h1>
+    <h1 class="intro-title">Always Carry Bubbles<sup>™</sup></h1>
 
     <div class="tagline">
       Advancing Whimsy
