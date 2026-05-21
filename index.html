@@ -1,61 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Always Carry Bubbles</title>
+<title>Always Carry Bubbles</title>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f8f8f5;
-      color: #111;
-      font-family: "Avenir Next", Arial, sans-serif;
-      text-align: center;
-      padding: 2rem;
-    }
+<style>
 
-    main {
-      max-width: 700px;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
-    h1 {
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 400;
-      margin-bottom: 1rem;
-      letter-spacing: 0.04em;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .tagline {
-      font-size: clamp(1.25rem, 4vw, 2rem);
-      font-weight: 300;
-      margin-bottom: 2rem;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    p {
-      line-height: 1.7;
-      font-size: 1.1rem;
-    }
-  </style>
+body {
+  margin: 0;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+  font-family: "Avenir Next", "Montserrat", sans-serif;
+}
+
+/* Animated Bubble Background */
+
+.bubbles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(2px);
+  animation: float linear infinite;
+}
+
+.bubble:nth-child(1) {
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 18s;
+}
+
+.bubble:nth-child(2) {
+  left: 20%;
+  width: 120px;
+  height: 120px;
+  animation-duration: 26s;
+}
+
+.bubble:nth-child(3) {
+  left: 35%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 14s;
+}
+
+.bubble:nth-child(4) {
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  animation-duration: 22s;
+}
+
+.bubble:nth-child(5) {
+  left: 70%;
+  width: 140px;
+  height: 140px;
+  animation-duration: 30s;
+}
+
+.bubble:nth-child(6) {
+  left: 85%;
+  width: 55px;
+  height: 55px;
+  animation-duration: 17s;
+}
+
+.bubble:nth-child(7) {
+  left: 60%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 12s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Main Layout */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+h1 {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.tagline {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.intro {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  max-width: 720px;
+  margin: auto;
+  opacity: 0.92;
+}
+
+/* About Section */
+
+.about {
+  position: relative;
+  z-index: 1;
+  padding: 8rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.about p {
+  line-height: 1.9;
+  font-size: 1.08rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.92;
+}
+
+.footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  opacity: 0.5;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+</style>
 </head>
 
 <body>
-  <main>
+
+<div class="bubbles">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
+
+<section class="hero">
+
+  <div class="hero-content">
+
     <h1>Always Carry Bubbles</h1>
 
     <div class="tagline">
       Advancing Whimsy
     </div>
 
-    <p>
+    <div class="intro">
       A small reminder to breathe, notice,
       and change the air around you.
-    </p>
-  </main>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about">
+
+  <h2>About</h2>
+
+  <p>
+    Always Carry Bubbles began long before it became a project.
+    It started as a simple habit:
+    carrying bubbles into ordinary places simply because they made people smile.
+  </p>
+
+  <p>
+    Over time, it became clear that small moments matter.
+    A pause.
+    A laugh.
+    A brief interruption to tension.
+    A reminder that softness still belongs in public life.
+  </p>
+
+  <p>
+    We are not trying to create happiness or sell outcomes.
+    We offer moments:
+    opportunities for curiosity, presence, atmosphere, and perspective.
+  </p>
+
+  <p>
+    Bubbles are temporary.
+    That is part of the point.
+    They drift through shared space, offer a moment,
+    and disappear without demanding anything in return.
+  </p>
+
+  <p>
+    Always Carry Bubbles exists somewhere between art project,
+    ritual,
+    atmosphere,
+    and invitation.
+  </p>
+
+</section>
+
+<div class="footer">
+  © Always Carry Bubbles
+</div>
+
 </body>
 </html>
