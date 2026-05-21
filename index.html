@@ -4,10 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Always Carry Bubbles™</title>
+<title>Always Carry Bubbles</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 * {
@@ -23,10 +22,10 @@ body {
   background: #000;
   color: white;
   overflow-x: hidden;
-  font-family: "Avenir Next", "Montserrat", sans-serif;
+  font-family: "Avenir Next", "Montserrat", Arial, sans-serif;
 }
 
-/* Animated Bubble Background */
+/* Bubble Background */
 
 .bubbles {
   position: fixed;
@@ -56,62 +55,19 @@ body {
     0 0 20px rgba(180,220,255,0.08);
 
   backdrop-filter: blur(1px);
-
   animation: float linear infinite;
 }
 
-.bubble:nth-child(1) {
-  left: 10%;
-  width: 60px;
-  height: 60px;
-  animation-duration: 18s;
-}
-
-.bubble:nth-child(2) {
-  left: 20%;
-  width: 120px;
-  height: 120px;
-  animation-duration: 26s;
-}
-
-.bubble:nth-child(3) {
-  left: 35%;
-  width: 40px;
-  height: 40px;
-  animation-duration: 14s;
-}
-
-.bubble:nth-child(4) {
-  left: 50%;
-  width: 90px;
-  height: 90px;
-  animation-duration: 22s;
-}
-
-.bubble:nth-child(5) {
-  left: 70%;
-  width: 140px;
-  height: 140px;
-  animation-duration: 30s;
-}
-
-.bubble:nth-child(6) {
-  left: 85%;
-  width: 55px;
-  height: 55px;
-  animation-duration: 17s;
-}
-
-.bubble:nth-child(7) {
-  left: 60%;
-  width: 30px;
-  height: 30px;
-  animation-duration: 12s;
-}
+.bubble:nth-child(1) { left: 8%; width: 140px; height: 140px; animation-duration: 34s; }
+.bubble:nth-child(2) { left: 22%; width: 70px; height: 70px; animation-duration: 24s; animation-delay: 4s; }
+.bubble:nth-child(3) { left: 40%; width: 180px; height: 180px; animation-duration: 42s; animation-delay: 2s; }
+.bubble:nth-child(4) { left: 58%; width: 90px; height: 90px; animation-duration: 28s; animation-delay: 1s; }
+.bubble:nth-child(5) { left: 74%; width: 160px; height: 160px; animation-duration: 38s; animation-delay: 6s; }
+.bubble:nth-child(6) { left: 88%; width: 60px; height: 60px; animation-duration: 20s; animation-delay: 3s; }
 
 @keyframes float {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translate3d(0, 0, 0) scale(0.95);
     opacity: 0;
   }
 
@@ -119,13 +75,22 @@ body {
     opacity: 0.22;
   }
 
+  50% {
+    transform: translate3d(30px, -50vh, 0) scale(1);
+  }
+
   100% {
-    transform: translateY(-120vh) rotate(360deg);
+    transform: translate3d(-20px, -120vh, 0) scale(1.05);
     opacity: 0;
   }
 }
 
-/* Main Layout */
+/* Layout */
+
+section {
+  position: relative;
+  z-index: 1;
+}
 
 .hero {
   min-height: 100vh;
@@ -134,12 +99,10 @@ body {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 920px;
 }
 
 h1 {
@@ -164,38 +127,46 @@ h1 {
   opacity: 0.92;
 }
 
-/* About Section */
-
-.about {
-  position: relative;
-  z-index: 1;
-  padding: 8rem 2rem;
-  max-width: 900px;
+.content-section {
+  max-width: 920px;
   margin: auto;
+  padding: 7rem 2rem;
 }
 
-.about h2 {
-  font-size: 2.5rem;
+.content-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 400;
   margin-bottom: 2rem;
+  letter-spacing: 0.03em;
 }
 
-.about p {
-  line-height: 1.9;
+.content-section p {
   font-size: 1.08rem;
+  line-height: 1.9;
+  opacity: 0.9;
   margin-bottom: 1.5rem;
-  opacity: 0.92;
+}
+
+.divider {
+  max-width: 920px;
+  margin: auto;
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+}
+
+.small-note {
+  font-size: 0.95rem;
+  opacity: 0.65;
 }
 
 .footer {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: 4rem 2rem;
   opacity: 0.5;
   font-size: 0.9rem;
-  position: relative;
-  z-index: 1;
 }
-
 </style>
 </head>
 
@@ -208,14 +179,11 @@ h1 {
   <div class="bubble"></div>
   <div class="bubble"></div>
   <div class="bubble"></div>
-  <div class="bubble"></div>
 </div>
 
 <section class="hero">
-
   <div class="hero-content">
-
-    <h1>Always Carry Bubbles™</h1>
+    <h1>Always Carry Bubbles</h1>
 
     <div class="tagline">
       Advancing Whimsy
@@ -223,15 +191,14 @@ h1 {
 
     <div class="intro">
       A small reminder to breathe, notice,
-      and change the air around you.
+      and create something lighter around you.
     </div>
-
   </div>
-
 </section>
 
-<section class="about">
+<div class="divider"></div>
 
+<section class="content-section">
   <h2>About</h2>
 
   <p>
@@ -241,7 +208,7 @@ h1 {
   </p>
 
   <p>
-    Over time, it became clear that small moments matter.
+    Over time, it became clear that those small moments matter.
     A pause.
     A laugh.
     A brief interruption to tension.
@@ -253,6 +220,53 @@ h1 {
     We offer moments:
     opportunities for curiosity, presence, atmosphere, and perspective.
   </p>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section">
+  <h2>Ethos</h2>
+
+  <p>
+    Always Carry Bubbles is built around ease, choice, and human pace.
+    No pressure.
+    No forced participation.
+    No demand that anyone feel a certain way.
+  </p>
+
+  <p>
+    A bubble is an invitation, not an instruction.
+    It appears, drifts, catches the light, and leaves.
+    People can notice it, ignore it, laugh at it, follow it, or simply walk on.
+  </p>
+
+  <p>
+    That freedom matters.
+    The moment only works if people are allowed to meet it on their own terms.
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section">
+  <h2>What This Is</h2>
+
+  <p>
+    Always Carry Bubbles exists somewhere between public art,
+    atmosphere,
+    ritual,
+    and invitation.
+  </p>
+
+  <p>
+    It is a brand, yes.
+    But before that, it is a practice:
+    a way of gently changing the moment of a room,
+    a sidewalk,
+    a booth,
+    a line,
+    or an ordinary day.
+  </p>
 
   <p>
     Bubbles are temporary.
@@ -260,18 +274,52 @@ h1 {
     They drift through shared space, offer a moment,
     and disappear without demanding anything in return.
   </p>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section">
+  <h2>Human Authorship</h2>
 
   <p>
-    Always Carry Bubbles exists somewhere between art project,
-    ritual,
-    atmosphere,
-    and invitation.
+    This project uses AI as a bounded drafting, organization, and reference tool.
+    AI may help sort language, test structure, or support internal planning.
   </p>
 
+  <p>
+    It is not the author, owner, decision-maker, or brand voice.
+    Final choices, accountability, authorship, and public use remain human.
+  </p>
+
+  <p class="small-note">
+    Collaborator work, artist materials, and proprietary content are not treated as raw material without permission.
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section">
+  <h2>Coming Soon</h2>
+
+  <p>
+    Always Carry Bubbles is still taking shape.
+    More will appear here as the project grows:
+    products, field notes, event information, and ways to join the moment.
+  </p>
+
+  <p>
+    For now, breathe.
+    Notice the air.
+    Carry something light.
+  </p>
+
+  <p>
+    ...exhale
+  </p>
 </section>
 
 <div class="footer">
-  © Always Carry Bubbles
+  © Always Carry Bubbles™
 </div>
 
 </body>
